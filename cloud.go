@@ -30,14 +30,12 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	b, _ := json.Marshal(ln)
 
-	p, err := lunanode.LunaNodeFromJSON(b)
+	_, err := lunanode.LunaNodeFromJSON(b)
 
 	if err != nil {
 
 		fmt.Fprint(w, err)
 
 	}
-
-	p.CreateInstance()
 
 }
